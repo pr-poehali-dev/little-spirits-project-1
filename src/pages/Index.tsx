@@ -1,5 +1,7 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
+
+const ORDER_URL = "https://functions.poehali.dev/119cd058-54f2-4013-b08c-9573f9d6d7c6";
 
 const HEROES = [
   {
@@ -119,6 +121,8 @@ export default function Index() {
   const [timerMins, setTimerMins] = useState(34);
   const [orderForm, setOrderForm] = useState({ name: "", phone: "", email: "", address: "", comment: "" });
   const [orderSubmitted, setOrderSubmitted] = useState(false);
+  const [orderLoading, setOrderLoading] = useState(false);
+  const [orderError, setOrderError] = useState("");
 
   const totalItems = cart.reduce((s, i) => s + i.qty, 0);
   const totalPrice = cart.reduce((s, i) => s + i.price * i.qty, 0);
@@ -166,6 +170,41 @@ export default function Index() {
     setActivePage(page);
     setMobileMenuOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const sendOrder = async () => {
+    if (!orderForm.name || !orderForm.phone || !orderForm.address) {
+      setOrderError("Пожалуйста, заполни имя, телефон и адрес");
+      return;
+    }
+    setOrderLoading(true);
+    setOrderError("");
+    try {
+      const res = await fetch(ORDER_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...orderForm,
+          items: cart.map(item => ({
+            name: item.name,
+            emoji: HEROES.find(h => h.id === item.id)?.emoji || "✦",
+            price: item.price,
+            qty: item.qty,
+          })),
+          total: totalPrice,
+        }),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        setOrderSubmitted(true);
+      } else {
+        setOrderError(data.error || "Что-то пошло не так, попробуй ещё раз");
+      }
+    } catch {
+      setOrderError("Ошибка сети. Проверь интернет и попробуй ещё раз.");
+    } finally {
+      setOrderLoading(false);
+    }
   };
 
   return (
@@ -1019,14 +1058,23 @@ export default function Index() {
                         {totalPrice.toLocaleString()} ₽
                       </span>
                     </div>
+                    {orderError && (
+                      <div className="px-4 py-3 rounded-xl text-sm mb-2"
+                        style={{ background: "rgba(180,60,60,0.12)", border: "1px solid rgba(180,60,60,0.25)", color: "hsl(0,65%,70%)", fontFamily: "'Golos Text', sans-serif" }}>
+                        {orderError}
+                      </div>
+                    )}
                     <button
-                      onClick={() => {
-                        if (orderForm.name && orderForm.phone && orderForm.address) {
-                          setOrderSubmitted(true);
-                        }
-                      }}
-                      className="btn-gold w-full py-4 rounded-xl font-medium text-sm">
-                      Подтвердить заказ
+                      onClick={sendOrder}
+                      disabled={orderLoading}
+                      className="btn-gold w-full py-4 rounded-xl font-medium text-sm flex items-center justify-center gap-2"
+                      style={{ opacity: orderLoading ? 0.7 : 1, cursor: orderLoading ? "not-allowed" : "pointer" }}>
+                      {orderLoading ? (
+                        <>
+                          <Icon name="Loader" size={16} style={{ animation: "spin-slow 1s linear infinite" }} />
+                          Отправляем заказ...
+                        </>
+                      ) : "Подтвердить заказ"}
                     </button>
                     <p className="text-center text-xs mt-3"
                       style={{ color: "hsl(40,15%,38%)", fontFamily: "'Golos Text', sans-serif" }}>

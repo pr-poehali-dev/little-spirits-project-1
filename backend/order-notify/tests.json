@@ -1,0 +1,47 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "POST valid order",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Мария Иванова",
+        "phone": "+7 900 123-45-67",
+        "email": "test@example.com",
+        "address": "Москва, ул. Лесная, д. 5, кв. 12",
+        "comment": "Подарочная упаковка пожалуйста",
+        "items": [
+          {"name": "Нерелий", "emoji": "🌿", "price": 3200, "qty": 1},
+          {"name": "Айрея", "emoji": "💧", "price": 3200, "qty": 2}
+        ],
+        "total": 9600
+      },
+      "expectedStatus": 200,
+      "expectedBody": {"ok": true},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "POST missing required fields",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Тест"
+      },
+      "expectedStatus": 400,
+      "expectedBody": {"error": "Необходимо заполнить: имя, телефон, адрес"},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "GET method not allowed",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 405
+    }
+  ]
+}
