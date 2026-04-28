@@ -44,7 +44,7 @@ const HEROES = [
     emoji: "🌿",
     sign: "Рак, Скорпион, Рыбы",
     icon: "Heart",
-    image: "https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/files/c9fc741e-59d0-4a78-aa70-fc5961557419.jpg",
+    image: "https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/bucket/28dd189f-d141-40dc-a8d2-49742dda9731.png",
   },
   {
     id: 4,
