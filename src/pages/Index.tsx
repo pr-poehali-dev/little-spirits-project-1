@@ -413,7 +413,7 @@ export default function Index() {
                 </div>
 
                 <div className="relative animate-fade-in delay-300 flex items-center justify-center">
-                  <div className="relative z-10 w-full animate-float" style={{ maxWidth: "900px" }}>
+                  <div className="relative z-10 w-full animate-float" style={{ maxWidth: "1100px" }}>
                     <img
                       src="https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/bucket/78899b48-1b18-41b1-bd9a-7f1fc6360787.png"
                       alt="Коллекция Little Spirits"
