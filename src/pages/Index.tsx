@@ -430,6 +430,12 @@ export default function Index() {
                     ✦ Ограниченный тираж
                   </div>
                 </div>
+                <div className="md:hidden flex justify-center mt-2">
+                  <span className="px-4 py-2 rounded-xl text-xs"
+                    style={{ background: "rgba(212,175,55,0.12)", border: "1px solid rgba(212,175,55,0.25)", color: "hsl(42,70%,70%)", fontFamily: "'Golos Text', sans-serif" }}>
+                    ✦ Ограниченный тираж
+                  </span>
+                </div>
               </div>
 
               <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce"
