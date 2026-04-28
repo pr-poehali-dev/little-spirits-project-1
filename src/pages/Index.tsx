@@ -549,7 +549,7 @@ export default function Index() {
                     Каждый несёт свою эмоцию. Каждый — ручная работа с историей.
                   </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                   {HEROES.map((hero, i) => (
                     <div key={hero.id}
                       className={`scroll-reveal delay-${(i % 3) * 100} product-card rounded-2xl overflow-hidden cursor-pointer flex`}
