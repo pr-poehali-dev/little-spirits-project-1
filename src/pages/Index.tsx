@@ -554,8 +554,8 @@ export default function Index() {
                     <div key={hero.id}
                       className={`scroll-reveal delay-${(i % 3) * 100} product-card rounded-2xl overflow-hidden cursor-pointer flex`}
                       onClick={() => navigate("catalog")}
-                      style={{ background: "linear-gradient(160deg, hsl(35,18%,14%), hsl(35,12%,11%))", border: "1px solid hsl(35,18%,20%)", minHeight: 160 }}>
-                      <div className="relative overflow-hidden flex-shrink-0" style={{ width: 140 }}>
+                      style={{ background: "linear-gradient(160deg, hsl(35,18%,14%), hsl(35,12%,11%))", border: "1px solid hsl(35,18%,20%)", minHeight: 220 }}>
+                      <div className="relative overflow-hidden flex-shrink-0" style={{ width: "50%" }}>
                         <img src={hero.image} alt={hero.name} className="w-full h-full object-cover object-top"
                           style={{ transition: "transform 0.4s ease" }}
                           onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.06)")}
