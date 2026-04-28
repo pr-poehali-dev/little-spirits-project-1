@@ -425,7 +425,7 @@ export default function Index() {
                       }}
                     />
                   </div>
-                  <div className="absolute bottom-6 right-6 z-20 px-4 py-2 rounded-xl text-xs backdrop-blur-md"
+                  <div className="hidden md:block absolute bottom-6 right-6 z-20 px-4 py-2 rounded-xl text-xs backdrop-blur-md"
                     style={{ background: "rgba(212,175,55,0.12)", border: "1px solid rgba(212,175,55,0.25)", color: "hsl(42,70%,70%)", fontFamily: "'Golos Text', sans-serif" }}>
                     ✦ Ограниченный тираж
                   </div>
