@@ -459,11 +459,14 @@ export default function Index() {
 
                 <div className="grid md:grid-cols-3 gap-12 items-center">
                   <div className="scroll-reveal">
-                    <img
-                      src="https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/files/4b52b209-acbf-49b5-8913-52c5bea578c6.jpg"
-                      alt="Ребёнок с игрушкой"
+                    <video
+                      src="https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/bucket/e55bb452-5e62-4a16-9277-e43d87751486.mov"
                       className="w-full rounded-2xl object-cover"
                       style={{ aspectRatio: "4/5", boxShadow: "0 30px 80px rgba(0,0,0,0.5)" }}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
                     />
                   </div>
 
