@@ -413,12 +413,13 @@ export default function Index() {
                 </div>
 
                 <div className="relative animate-fade-in delay-300 flex items-center justify-start overflow-visible">
-                  <div className="relative z-10 animate-float" style={{ width: "1700px" }}>
+                  <div className="relative z-10 animate-float">
                     <img
                       src="https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/bucket/78899b48-1b18-41b1-bd9a-7f1fc6360787.png"
                       alt="Коллекция Little Spirits"
-                      className="w-full object-cover"
+                      className="object-cover"
                       style={{
+                        width: "1700px",
                         height: 300,
                         maskImage: "radial-gradient(ellipse 75% 75% at 50% 50%, black 45%, transparent 80%)",
                         WebkitMaskImage: "radial-gradient(ellipse 75% 75% at 50% 50%, black 45%, transparent 80%)",
