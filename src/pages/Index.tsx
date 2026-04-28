@@ -419,7 +419,7 @@ export default function Index() {
                       alt="Коллекция Little Spirits"
                       className="w-full object-cover"
                       style={{
-                        aspectRatio: "16/9",
+                        height: 300,
                         maskImage: "radial-gradient(ellipse 75% 75% at 50% 50%, black 45%, transparent 80%)",
                         WebkitMaskImage: "radial-gradient(ellipse 75% 75% at 50% 50%, black 45%, transparent 80%)",
                       }}
