@@ -6,69 +6,87 @@ const ORDER_URL = "https://functions.poehali.dev/119cd058-54f2-4013-b08c-9573f9d
 const HEROES = [
   {
     id: 1,
-    name: "Нерелий",
-    role: "Хранитель покоя",
+    name: "Король Шишун",
+    role: "Хранитель дома",
     emotion: "тревога",
-    description: "Помогает проживать тревогу мягко и спокойно. Его присутствие — как тихий лес на рассвете.",
+    description: "Создаёт уют, защищает пространство от хаоса и возвращает чувство спокойствия.",
+    power: "Стабильность",
     price: 3200,
-    accentColor: "#5ba8a0",
-    emoji: "🌿",
+    accentColor: "#8a6a3a",
+    emoji: "🏡",
     sign: "Телец, Рак, Дева",
+    icon: "Crown",
+    image: "https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/files/f1f4ad1f-5641-4df2-888b-62a05c22a591.jpg",
   },
   {
     id: 2,
-    name: "Игнитрис",
-    role: "Хранитель силы",
-    emotion: "усталость",
-    description: "Пробуждает внутренний огонь. Для тех, кто устал, но хочет двигаться дальше.",
+    name: "Айрея",
+    role: "Хранитель лёгкости",
+    emotion: "запутался",
+    description: "Помогает отпустить лишние мысли, вдохнуть свободно и почувствовать внутреннюю ясность.",
+    power: "Свобода",
     price: 3200,
-    accentColor: "#d4783a",
-    emoji: "🔥",
-    sign: "Овен, Лев, Стрелец",
+    accentColor: "#4a7aaa",
+    emoji: "🌬️",
+    sign: "Близнецы, Весы, Водолей",
+    icon: "Wind",
+    image: "https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/files/54b1b4ba-0f18-40aa-b13d-12b4a399017e.jpg",
   },
   {
     id: 3,
-    name: "Листорог",
-    role: "Хранитель роста",
+    name: "Нерелий",
+    role: "Хранитель сердца",
     emotion: "тяжело",
-    description: "Помогает расти сквозь трудности. Его корни уходят глубоко — он выдержит всё.",
+    description: "Напоминает о любви к себе, мягкости, тепле и доверии.",
+    power: "Любовь",
+    price: 3200,
+    accentColor: "#b06080",
+    emoji: "🌿",
+    sign: "Рак, Скорпион, Рыбы",
+    icon: "Heart",
+    image: "https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/files/c9fc741e-59d0-4a78-aa70-fc5961557419.jpg",
+  },
+  {
+    id: 4,
+    name: "Листорог",
+    role: "Хранитель пути",
+    emotion: "усталость",
+    description: "Даёт силу двигаться вперёд даже тогда, когда не видно дороги.",
+    power: "Рост",
     price: 3200,
     accentColor: "#5a8a45",
     emoji: "🌱",
     sign: "Козерог, Телец, Дева",
-  },
-  {
-    id: 4,
-    name: "Айрея",
-    role: "Хранительница ясности",
-    emotion: "запутался",
-    description: "Рассеивает туман сомнений. Её голос — чистый ручей, который указывает путь.",
-    price: 3200,
-    accentColor: "#4a7aaa",
-    emoji: "💧",
-    sign: "Близнецы, Весы, Водолей",
+    icon: "Leaf",
+    image: "https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/files/49ea3f56-c7cc-4789-90ed-bc22cd9b885b.jpg",
   },
   {
     id: 5,
-    name: "Эмиро",
-    role: "Хранитель открытости",
+    name: "Древлин",
+    role: "Хранитель покоя",
     emotion: "закрылся",
-    description: "Помогает открыть сердце снова. Тёплый, как солнечный луч через листву.",
+    description: "Учит замедляться, заземляться и находить опору внутри себя.",
+    power: "Спокойствие",
     price: 3200,
-    accentColor: "#c8a840",
-    emoji: "☀️",
-    sign: "Рак, Скорпион, Рыбы",
+    accentColor: "#6b8a5a",
+    emoji: "🌳",
+    sign: "Телец, Дева, Козерог",
+    icon: "TreePine",
+    image: "https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/files/8f6a3b8c-66ef-4e20-84bd-352e148f428c.jpg",
   },
   {
     id: 6,
-    name: "Древлин",
-    role: "Хранитель энергии",
+    name: "Игнитрис",
+    role: "Хранитель огня",
     emotion: "энергия",
-    description: "Пробуждает жизненную силу. Древний дух леса, который помнит всё.",
+    description: "Пробуждает энергию, смелость, желание жить и действовать.",
+    power: "Огонь",
     price: 3200,
-    accentColor: "#8a5ab8",
-    emoji: "⚡",
-    sign: "Скорпион, Водолей, Козерог",
+    accentColor: "#d4783a",
+    emoji: "🔥",
+    sign: "Овен, Лев, Стрелец",
+    icon: "Flame",
+    image: "https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/files/98f54da6-05de-4f30-89f5-20930bba8c6d.jpg",
   },
 ];
 
@@ -521,21 +539,28 @@ export default function Index() {
                     Каждый несёт свою эмоцию. Каждый — ручная работа с историей.
                   </p>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
                   {HEROES.map((hero, i) => (
-                    <div key={hero.id} className={`scroll-reveal delay-${(i % 4) * 100} product-card p-6 rounded-2xl forest-card text-center`}
-                      onClick={() => navigate("catalog")}>
-                      <div className="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl"
-                        style={{ background: `${hero.accentColor}18`, border: `1px solid ${hero.accentColor}30` }}>
-                        {hero.emoji}
+                    <div key={hero.id}
+                      className={`scroll-reveal delay-${(i % 4) * 100} product-card rounded-2xl overflow-hidden cursor-pointer`}
+                      onClick={() => navigate("catalog")}
+                      style={{ background: "linear-gradient(160deg, hsl(35,18%,14%), hsl(35,12%,11%))", border: "1px solid hsl(35,18%,20%)" }}>
+                      <div className="relative overflow-hidden" style={{ height: 140 }}>
+                        <img src={hero.image} alt={hero.name} className="w-full h-full object-cover object-top"
+                          style={{ transition: "transform 0.4s ease" }}
+                          onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.06)")}
+                          onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")} />
+                        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, hsl(35,12%,11%) 0%, transparent 60%)" }} />
                       </div>
-                      <h3 className="text-xl mb-1"
-                        style={{ fontFamily: "'Cormorant Garamond', serif", color: "hsl(40,35%,88%)" }}>{hero.name}</h3>
-                      <p className="text-xs tracking-wide mb-3"
-                        style={{ color: "hsl(40,15%,45%)", fontFamily: "'Golos Text', sans-serif" }}>{hero.role}</p>
-                      <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.1rem", color: "hsl(42,70%,62%)" }}>
-                        {hero.price.toLocaleString()} ₽
-                      </p>
+                      <div className="p-4 pt-3">
+                        <h3 className="text-base leading-tight mb-0.5"
+                          style={{ fontFamily: "'Cormorant Garamond', serif", color: "hsl(35,35%,88%)", fontWeight: 400 }}>{hero.name}</h3>
+                        <p className="text-xs mb-2"
+                          style={{ color: hero.accentColor, fontFamily: "'Golos Text', sans-serif", opacity: 0.85 }}>{hero.role}</p>
+                        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.05rem", color: "hsl(38,55%,65%)" }}>
+                          {hero.price.toLocaleString()} ₽
+                        </p>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -708,40 +733,106 @@ export default function Index() {
 
         {/* ===== CATALOG PAGE ===== */}
         {activePage === "catalog" && (
-          <section className="py-24 px-6 min-h-screen">
+          <section className="py-24 px-6 min-h-screen" style={{ background: "linear-gradient(180deg, hsl(35,18%,10%) 0%, hsl(35,12%,8%) 100%)" }}>
             <div className="container max-w-6xl mx-auto">
-              <div className="text-center mb-16 animate-fade-in-up">
-                <p className="text-xs tracking-[0.3em] uppercase mb-4"
-                  style={{ color: "hsl(85,30%,48%)", fontFamily: "'Golos Text', sans-serif" }}>✦ каталог ✦</p>
-                <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)", color: "hsl(40,35%,90%)" }}>
-                  Первая коллекция
+              <div className="text-center mb-20 animate-fade-in-up">
+                <p className="text-xs tracking-[0.35em] uppercase mb-4"
+                  style={{ color: "hsl(35,40%,55%)", fontFamily: "'Golos Text', sans-serif", letterSpacing: "0.35em" }}>✦ первая коллекция ✦</p>
+                <h1 className="mb-5" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)", color: "hsl(35,30%,90%)", fontWeight: 300 }}>
+                  Шесть хранителей
                 </h1>
+                <p className="max-w-lg mx-auto text-sm leading-relaxed"
+                  style={{ color: "hsl(35,15%,52%)", fontFamily: "'Golos Text', sans-serif" }}>
+                  Каждый — ручная работа. Тираж ограничен. Выбери того, кто созвучен твоему состоянию прямо сейчас.
+                </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
                 {HEROES.map((hero, i) => (
-                  <div key={hero.id} className={`scroll-reveal delay-${(i % 3) * 100} product-card forest-card rounded-3xl overflow-hidden`}>
-                    <div className="relative flex items-center justify-center py-12"
-                      style={{ background: `linear-gradient(135deg, ${hero.accentColor}15, hsl(150,18%,7%))` }}>
-                      <span className="text-[100px] product-img inline-block">{hero.emoji}</span>
-                      <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs"
-                        style={{ background: "rgba(8,20,12,0.7)", border: `1px solid ${hero.accentColor}30`, color: hero.accentColor, fontFamily: "'Golos Text', sans-serif" }}>
+                  <div
+                    key={hero.id}
+                    className={`scroll-reveal delay-${(i % 3) * 100} group rounded-3xl overflow-hidden flex flex-col`}
+                    style={{
+                      background: "linear-gradient(160deg, hsl(35,18%,14%) 0%, hsl(35,12%,11%) 100%)",
+                      border: "1px solid hsl(35,18%,20%)",
+                      boxShadow: "0 8px 40px rgba(0,0,0,0.35)",
+                      transition: "transform 0.35s ease, box-shadow 0.35s ease",
+                    }}
+                    onMouseEnter={e => {
+                      (e.currentTarget as HTMLDivElement).style.transform = "translateY(-6px)";
+                      (e.currentTarget as HTMLDivElement).style.boxShadow = `0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px ${hero.accentColor}30`;
+                    }}
+                    onMouseLeave={e => {
+                      (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
+                      (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 40px rgba(0,0,0,0.35)";
+                    }}
+                  >
+                    {/* Фото */}
+                    <div className="relative overflow-hidden" style={{ background: `linear-gradient(145deg, hsl(35,22%,18%), hsl(35,14%,13%))` }}>
+                      <img
+                        src={hero.image}
+                        alt={hero.name}
+                        className="w-full object-cover"
+                        style={{ height: 280, objectPosition: "center top", transition: "transform 0.5s ease" }}
+                        onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.04)")}
+                        onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
+                      />
+                      {/* Роль — бейдж */}
+                      <div className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs backdrop-blur-sm"
+                        style={{
+                          background: "rgba(20,14,8,0.72)",
+                          border: `1px solid ${hero.accentColor}45`,
+                          color: hero.accentColor,
+                          fontFamily: "'Golos Text', sans-serif",
+                          letterSpacing: "0.08em",
+                        }}>
                         {hero.role}
                       </div>
+                      {/* Иконка стихии */}
+                      <div className="absolute top-4 right-4 w-9 h-9 rounded-xl flex items-center justify-center backdrop-blur-sm"
+                        style={{
+                          background: "rgba(20,14,8,0.72)",
+                          border: `1px solid ${hero.accentColor}35`,
+                        }}>
+                        <Icon name={hero.icon} size={16} style={{ color: hero.accentColor }} />
+                      </div>
                     </div>
-                    <div className="p-6">
-                      <h3 className="text-2xl mb-1"
-                        style={{ fontFamily: "'Cormorant Garamond', serif", color: "hsl(40,35%,90%)" }}>{hero.name}</h3>
-                      <p className="text-sm mb-4 leading-relaxed"
-                        style={{ color: "hsl(40,15%,50%)", fontFamily: "'Golos Text', sans-serif" }}>{hero.description}</p>
-                      <div className="flex items-center justify-between">
-                        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.6rem", color: "hsl(42,70%,65%)" }}>
+
+                    {/* Контент */}
+                    <div className="flex flex-col flex-1 p-6">
+                      {/* Имя */}
+                      <h3 className="mb-1 leading-tight"
+                        style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.65rem", color: "hsl(35,35%,90%)", fontWeight: 400 }}>
+                        {hero.name}
+                      </h3>
+
+                      {/* Описание */}
+                      <p className="text-sm leading-relaxed mb-5 flex-1"
+                        style={{ color: "hsl(35,12%,55%)", fontFamily: "'Golos Text', sans-serif" }}>
+                        {hero.description}
+                      </p>
+
+                      {/* Сила */}
+                      <div className="flex items-center gap-2 mb-5 px-3 py-2 rounded-xl"
+                        style={{ background: `${hero.accentColor}10`, border: `1px solid ${hero.accentColor}22` }}>
+                        <Icon name={hero.icon} size={13} style={{ color: hero.accentColor }} />
+                        <span className="text-xs tracking-[0.15em] uppercase"
+                          style={{ color: hero.accentColor, fontFamily: "'Golos Text', sans-serif" }}>
+                          Сила · {hero.power}
+                        </span>
+                      </div>
+
+                      {/* Цена + кнопка */}
+                      <div className="flex items-center justify-between gap-3">
+                        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.55rem", color: "hsl(38,55%,65%)", fontWeight: 400 }}>
                           {hero.price.toLocaleString()} ₽
                         </span>
-                        <button onClick={() => addToCart(hero)}
-                          className="btn-gold px-5 py-2 rounded-xl text-sm flex items-center gap-2">
-                          <Icon name="ShoppingBag" size={14} />
-                          В корзину
+                        <button
+                          onClick={() => addToCart(hero)}
+                          className="btn-gold px-5 py-2.5 rounded-xl text-xs flex items-center gap-2 flex-shrink-0"
+                          style={{ letterSpacing: "0.06em" }}>
+                          <Icon name="ShoppingBag" size={13} />
+                          Выбрать
                         </button>
                       </div>
                     </div>
@@ -749,7 +840,7 @@ export default function Index() {
                 ))}
               </div>
 
-              <div className="mt-16 scroll-reveal">
+              <div className="mt-20 scroll-reveal">
                 <img
                   src="https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/files/7b452d69-e258-426c-9f7a-d3779fcf1b51.jpg"
                   alt="Коллекция хранителей"
