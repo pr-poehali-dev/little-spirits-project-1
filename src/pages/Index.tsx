@@ -549,26 +549,27 @@ export default function Index() {
                     Каждый несёт свою эмоцию. Каждый — ручная работа с историей.
                   </p>
                 </div>
-                <div className="flex flex-col gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                   {HEROES.slice(0, 3).map((hero, i) => (
                     <div key={hero.id}
-                      className={`scroll-reveal delay-${i * 100} product-card rounded-2xl overflow-hidden cursor-pointer flex`}
+                      className={`scroll-reveal delay-${i * 100} product-card rounded-2xl overflow-hidden cursor-pointer`}
                       onClick={() => navigate("catalog")}
-                      style={{ background: "linear-gradient(160deg, hsl(35,18%,14%), hsl(35,12%,11%))", border: "1px solid hsl(35,18%,20%)", height: 200 }}>
-                      <div className="relative overflow-hidden flex-shrink-0" style={{ width: 160 }}>
+                      style={{ background: "linear-gradient(160deg, hsl(35,18%,14%), hsl(35,12%,11%))", border: "1px solid hsl(35,18%,20%)" }}>
+                      <div className="relative overflow-hidden" style={{ height: 220 }}>
                         <img src={hero.image} alt={hero.name} className="w-full h-full object-cover object-top"
                           style={{ transition: "transform 0.4s ease" }}
                           onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.06)")}
                           onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")} />
+                        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, hsl(35,12%,11%) 0%, transparent 60%)" }} />
                       </div>
-                      <div className="flex flex-col justify-center p-6 flex-1" style={{ background: `linear-gradient(135deg, ${hero.accentColor}12 0%, transparent 100%)` }}>
+                      <div className="p-5" style={{ background: `linear-gradient(135deg, ${hero.accentColor}10 0%, transparent 100%)` }}>
                         <p className="text-xs tracking-[0.15em] uppercase mb-1"
                           style={{ color: hero.accentColor, fontFamily: "'Golos Text', sans-serif" }}>{hero.role}</p>
                         <h3 className="mb-2 leading-tight"
-                          style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.8rem", color: "hsl(35,35%,90%)", fontWeight: 400 }}>{hero.name}</h3>
-                        <p className="text-sm leading-relaxed mb-4"
+                          style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.6rem", color: "hsl(35,35%,90%)", fontWeight: 400 }}>{hero.name}</h3>
+                        <p className="text-sm leading-relaxed mb-3"
                           style={{ color: "hsl(35,12%,55%)", fontFamily: "'Golos Text', sans-serif" }}>{hero.description}</p>
-                        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.3rem", color: "hsl(38,55%,65%)" }}>
+                        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.2rem", color: "hsl(38,55%,65%)" }}>
                           {hero.price.toLocaleString()} ₽
                         </p>
                       </div>
