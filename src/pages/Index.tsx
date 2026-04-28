@@ -549,25 +549,26 @@ export default function Index() {
                     Каждый несёт свою эмоцию. Каждый — ручная работа с историей.
                   </p>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
-                  {HEROES.map((hero, i) => (
+                <div className="flex flex-col gap-5">
+                  {HEROES.slice(0, 3).map((hero, i) => (
                     <div key={hero.id}
-                      className={`scroll-reveal delay-${(i % 4) * 100} product-card rounded-2xl overflow-hidden cursor-pointer`}
+                      className={`scroll-reveal delay-${i * 100} product-card rounded-2xl overflow-hidden cursor-pointer flex`}
                       onClick={() => navigate("catalog")}
-                      style={{ background: "linear-gradient(160deg, hsl(35,18%,14%), hsl(35,12%,11%))", border: "1px solid hsl(35,18%,20%)" }}>
-                      <div className="relative overflow-hidden" style={{ height: 140 }}>
+                      style={{ background: "linear-gradient(160deg, hsl(35,18%,14%), hsl(35,12%,11%))", border: "1px solid hsl(35,18%,20%)", height: 200 }}>
+                      <div className="relative overflow-hidden flex-shrink-0" style={{ width: 160 }}>
                         <img src={hero.image} alt={hero.name} className="w-full h-full object-cover object-top"
                           style={{ transition: "transform 0.4s ease" }}
                           onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.06)")}
                           onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")} />
-                        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, hsl(35,12%,11%) 0%, transparent 60%)" }} />
                       </div>
-                      <div className="p-4 pt-3">
-                        <h3 className="text-base leading-tight mb-0.5"
-                          style={{ fontFamily: "'Cormorant Garamond', serif", color: "hsl(35,35%,88%)", fontWeight: 400 }}>{hero.name}</h3>
-                        <p className="text-xs mb-2"
-                          style={{ color: hero.accentColor, fontFamily: "'Golos Text', sans-serif", opacity: 0.85 }}>{hero.role}</p>
-                        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.05rem", color: "hsl(38,55%,65%)" }}>
+                      <div className="flex flex-col justify-center p-6 flex-1" style={{ background: `linear-gradient(135deg, ${hero.accentColor}12 0%, transparent 100%)` }}>
+                        <p className="text-xs tracking-[0.15em] uppercase mb-1"
+                          style={{ color: hero.accentColor, fontFamily: "'Golos Text', sans-serif" }}>{hero.role}</p>
+                        <h3 className="mb-2 leading-tight"
+                          style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.8rem", color: "hsl(35,35%,90%)", fontWeight: 400 }}>{hero.name}</h3>
+                        <p className="text-sm leading-relaxed mb-4"
+                          style={{ color: "hsl(35,12%,55%)", fontFamily: "'Golos Text', sans-serif" }}>{hero.description}</p>
+                        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.3rem", color: "hsl(38,55%,65%)" }}>
                           {hero.price.toLocaleString()} ₽
                         </p>
                       </div>
@@ -757,7 +758,7 @@ export default function Index() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
                 {HEROES.map((hero, i) => (
                   <div
                     key={hero.id}
@@ -783,7 +784,7 @@ export default function Index() {
                         src={hero.image}
                         alt={hero.name}
                         className="w-full object-cover"
-                        style={{ height: 160, objectPosition: "center top", transition: "transform 0.5s ease" }}
+                        style={{ height: 280, objectPosition: "center top", transition: "transform 0.5s ease" }}
                         onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.04)")}
                         onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
                       />
@@ -809,26 +810,35 @@ export default function Index() {
                     </div>
 
                     {/* Контент */}
-                    <div className="flex flex-col flex-1 p-3">
+                    <div className="flex flex-col flex-1 p-6">
                       <h3 className="mb-1 leading-tight"
-                        style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.15rem", color: "hsl(35,35%,90%)", fontWeight: 400 }}>
+                        style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.65rem", color: "hsl(35,35%,90%)", fontWeight: 400 }}>
                         {hero.name}
                       </h3>
 
-                      <p className="text-xs leading-relaxed mb-3 flex-1"
+                      <p className="text-sm leading-relaxed mb-5 flex-1"
                         style={{ color: "hsl(35,12%,55%)", fontFamily: "'Golos Text', sans-serif" }}>
                         {hero.description}
                       </p>
 
-                      <div className="flex items-center justify-between gap-2">
-                        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.1rem", color: "hsl(38,55%,65%)", fontWeight: 400 }}>
+                      <div className="flex items-center gap-2 mb-5 px-3 py-2 rounded-xl"
+                        style={{ background: `${hero.accentColor}10`, border: `1px solid ${hero.accentColor}22` }}>
+                        <Icon name={hero.icon} size={13} style={{ color: hero.accentColor }} />
+                        <span className="text-xs tracking-[0.15em] uppercase"
+                          style={{ color: hero.accentColor, fontFamily: "'Golos Text', sans-serif" }}>
+                          Сила · {hero.power}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center justify-between gap-3">
+                        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.55rem", color: "hsl(38,55%,65%)", fontWeight: 400 }}>
                           {hero.price.toLocaleString()} ₽
                         </span>
                         <button
                           onClick={() => addToCart(hero)}
-                          className="btn-gold px-3 py-1.5 rounded-lg text-xs flex items-center gap-1 flex-shrink-0"
+                          className="btn-gold px-5 py-2.5 rounded-xl text-xs flex items-center gap-2 flex-shrink-0"
                           style={{ letterSpacing: "0.06em" }}>
-                          <Icon name="ShoppingBag" size={11} />
+                          <Icon name="ShoppingBag" size={13} />
                           Выбрать
                         </button>
                       </div>
