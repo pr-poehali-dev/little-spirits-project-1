@@ -413,18 +413,16 @@ export default function Index() {
                 </div>
 
                 <div className="relative animate-fade-in delay-300 flex items-center justify-center">
-                  <div className="absolute inset-0 animate-glow-pulse"
-                    style={{ background: "radial-gradient(ellipse at center, rgba(212,175,55,0.08) 0%, transparent 70%)" }} />
-                  <div className="relative z-10 w-full max-w-xl animate-float"
-                    style={{
-                      maskImage: "radial-gradient(ellipse 85% 85% at 50% 50%, black 40%, transparent 80%)",
-                      WebkitMaskImage: "radial-gradient(ellipse 85% 85% at 50% 50%, black 40%, transparent 80%)",
-                    }}>
+                  <div className="relative z-10 w-full animate-float" style={{ maxWidth: "720px" }}>
                     <img
                       src="https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/bucket/78899b48-1b18-41b1-bd9a-7f1fc6360787.png"
                       alt="Коллекция Little Spirits"
                       className="w-full object-cover"
-                      style={{ aspectRatio: "16/9" }}
+                      style={{
+                        aspectRatio: "16/9",
+                        maskImage: "radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 75%)",
+                        WebkitMaskImage: "radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 75%)",
+                      }}
                     />
                   </div>
                   <div className="absolute bottom-6 right-6 z-20 px-4 py-2 rounded-xl text-xs backdrop-blur-md"
