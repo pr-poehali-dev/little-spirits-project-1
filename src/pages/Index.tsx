@@ -16,7 +16,7 @@ const HEROES = [
     emoji: "🏡",
     sign: "Телец, Рак, Дева",
     icon: "Crown",
-    image: "https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/files/f1f4ad1f-5641-4df2-888b-62a05c22a591.jpg",
+    image: "https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/bucket/fa9f9809-1b50-455d-8397-8913b034b37c.PNG",
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ const HEROES = [
     emoji: "🌬️",
     sign: "Близнецы, Весы, Водолей",
     icon: "Wind",
-    image: "https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/files/54b1b4ba-0f18-40aa-b13d-12b4a399017e.jpg",
+    image: "https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/bucket/319faa4f-6ce0-4428-a06d-bb5dddde2c0d.PNG",
   },
   {
     id: 3,
@@ -44,7 +44,7 @@ const HEROES = [
     emoji: "🌿",
     sign: "Рак, Скорпион, Рыбы",
     icon: "Heart",
-    image: "https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/bucket/28dd189f-d141-40dc-a8d2-49742dda9731.png",
+    image: "https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/bucket/529e0c78-299f-4c85-8e89-9bf96f180f76.PNG",
   },
   {
     id: 4,
@@ -58,7 +58,7 @@ const HEROES = [
     emoji: "🌱",
     sign: "Козерог, Телец, Дева",
     icon: "Leaf",
-    image: "https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/files/49ea3f56-c7cc-4789-90ed-bc22cd9b885b.jpg",
+    image: "https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/bucket/d6533291-db2e-466a-9f90-e1a347992a37.PNG",
   },
   {
     id: 5,
@@ -72,7 +72,7 @@ const HEROES = [
     emoji: "🌳",
     sign: "Телец, Дева, Козерог",
     icon: "TreePine",
-    image: "https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/files/8f6a3b8c-66ef-4e20-84bd-352e148f428c.jpg",
+    image: "https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/bucket/c78f9b9e-bdd5-4670-9a60-76b56d858e60.PNG",
   },
   {
     id: 6,
@@ -86,7 +86,7 @@ const HEROES = [
     emoji: "🔥",
     sign: "Овен, Лев, Стрелец",
     icon: "Flame",
-    image: "https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/files/98f54da6-05de-4f30-89f5-20930bba8c6d.jpg",
+    image: "https://cdn.poehali.dev/projects/c6d9f74d-4013-41c8-8d30-08b98562c318/bucket/e043ad8d-7cb2-4a69-852f-8b98438ec0d1.PNG",
   },
 ];
 
