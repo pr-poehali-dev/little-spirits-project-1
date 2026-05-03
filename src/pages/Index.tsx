@@ -146,9 +146,7 @@ export default function Index() {
   const [quizSelected, setQuizSelected] = useState<number | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [timerDays] = useState(12);
-  const [timerHours] = useState(8);
-  const [timerMins, setTimerMins] = useState(34);
+  const soldCount = 47;
   const [orderForm, setOrderForm] = useState({
     name: "",
     phone: "",
@@ -163,13 +161,7 @@ export default function Index() {
   const totalItems = cart.reduce((s, i) => s + i.qty, 0);
   const totalPrice = cart.reduce((s, i) => s + i.price * i.qty, 0);
 
-  useEffect(() => {
-    const t = setInterval(
-      () => setTimerMins((m) => (m > 0 ? m - 1 : 59)),
-      60000,
-    );
-    return () => clearInterval(t);
-  }, []);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -495,7 +487,7 @@ export default function Index() {
                     }}
                     className="btn-gold w-full py-3 rounded-xl font-medium"
                   >
-                    Оформить заказ
+                    Оформить предзаказ
                   </button>
                 </div>
               </>
@@ -669,7 +661,7 @@ export default function Index() {
                       fontFamily: "'Golos Text', sans-serif",
                     }}
                   >
-                    ✦ Ограниченный тираж
+                    ✦ Занято {soldCount} из 200 мест
                   </div>
                 </div>
                 <div className="md:hidden flex justify-center mt-2">
@@ -682,7 +674,7 @@ export default function Index() {
                       fontFamily: "'Golos Text', sans-serif",
                     }}
                   >
-                    ✦ Ограниченный тираж
+                    ✦ Занято {soldCount} из 200 мест
                   </span>
                 </div>
               </div>
@@ -2144,7 +2136,7 @@ export default function Index() {
                     fontFamily: "'Golos Text', sans-serif",
                   }}
                 >
-                  ✦ оформление ✦
+                  ✦ предзаказ ✦
                 </p>
                 <h1
                   style={{
@@ -2153,7 +2145,7 @@ export default function Index() {
                     color: "hsl(40,35%,90%)",
                   }}
                 >
-                  Оформление заказа
+                  Оформить предзаказ
                 </h1>
               </div>
 
@@ -2171,7 +2163,7 @@ export default function Index() {
                       color: "hsl(42,70%,65%)",
                     }}
                   >
-                    Заказ принят!
+                    Предзаказ оформлен!
                   </h2>
                   <p
                     className="text-sm mb-8"
@@ -2373,7 +2365,7 @@ export default function Index() {
                           Отправляем заказ...
                         </>
                       ) : (
-                        "Подтвердить заказ"
+                        "Оформить предзаказ"
                       )}
                     </button>
                     <p

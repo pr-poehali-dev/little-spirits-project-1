@@ -150,7 +150,7 @@ export default function NavCart({
                   </div>
                   <button onClick={() => { setCartOpen(false); navigate("checkout"); }}
                     className="btn-gold w-full py-3 rounded-xl font-medium">
-                    Оформить заказ
+                    Оформить предзаказ
                   </button>
                 </div>
               </>
